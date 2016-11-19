@@ -8,13 +8,9 @@
         private PictureBox picture;
         private CoordinateTransformer transformer;
 
-        public ImageLoader()
-        {
-            this.transformer = new CoordinateTransformer();
-        }
-
         public ImageLoader(int row, int col, CellType type)
         {
+            this.transformer = new CoordinateTransformer();
             this.picture = this.LoadImage(row, col, type);
         }
 
