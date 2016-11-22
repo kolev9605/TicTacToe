@@ -1,5 +1,8 @@
 ﻿namespace TicTacToe.Game.Forms
 {
+    using System.Drawing;
+    using System.Windows.Forms;
+
     partial class GameForm
     {
         /// <summary>
@@ -28,15 +31,13 @@
         private void InitializeComponent()
         {
             this.boardImage = new System.Windows.Forms.PictureBox();
-            this.oPicture = new System.Windows.Forms.PictureBox();
-            this.xPicture = new System.Windows.Forms.PictureBox();
+            this.newGameButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.boardImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // boardImage
             // 
+            this.boardImage.BackColor = System.Drawing.Color.Transparent;
             this.boardImage.Image = global::TicTacToe.Game.Properties.Resources.board;
             this.boardImage.Location = new System.Drawing.Point(175, 111);
             this.boardImage.Name = "boardImage";
@@ -44,23 +45,15 @@
             this.boardImage.TabIndex = 0;
             this.boardImage.TabStop = false;
             // 
-            // oPicture
+            // newGameButton
             // 
-            this.oPicture.Image = global::TicTacToe.Game.Properties.Resources.o;
-            this.oPicture.Location = new System.Drawing.Point(336, 430);
-            this.oPicture.Name = "oPicture";
-            this.oPicture.Size = new System.Drawing.Size(100, 101);
-            this.oPicture.TabIndex = 1;
-            this.oPicture.TabStop = false;
-            // 
-            // xPicture
-            // 
-            this.xPicture.Image = global::TicTacToe.Game.Properties.Resources.x;
-            this.xPicture.Location = new System.Drawing.Point(485, 430);
-            this.xPicture.Name = "xPicture";
-            this.xPicture.Size = new System.Drawing.Size(100, 101);
-            this.xPicture.TabIndex = 2;
-            this.xPicture.TabStop = false;
+            this.newGameButton.Location = new System.Drawing.Point(308, 48);
+            this.newGameButton.Name = "newGameButton";
+            this.newGameButton.Size = new System.Drawing.Size(101, 23);
+            this.newGameButton.TabIndex = 1;
+            this.newGameButton.Text = "New Game";
+            this.newGameButton.UseVisualStyleBackColor = true;
+            this.newGameButton.Click += new System.EventHandler(this.newGameButton_Click);
             // 
             // GameForm
             // 
@@ -68,20 +61,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(782, 555);
-            this.Controls.Add(this.xPicture);
-            this.Controls.Add(this.oPicture);
+            this.Controls.Add(this.newGameButton);
             this.Controls.Add(this.boardImage);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             ((System.ComponentModel.ISupportInitialize)(this.boardImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xPicture)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.PictureBox boardImage;
-        private System.Windows.Forms.PictureBox oPicture;
-        private System.Windows.Forms.PictureBox xPicture;
+        private Button newGameButton;
     }
 }

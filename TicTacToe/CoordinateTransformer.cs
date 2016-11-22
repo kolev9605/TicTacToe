@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class CoordinateTransformer
     {
@@ -12,10 +13,11 @@
         {
             this.rowCoordinates = new Dictionary<int, int>();
             this.colCoordinates = new Dictionary<int, int>();
-            this.InitDictionary();
+
+            this.InitDictionareis();
         }
 
-        private void InitDictionary()
+        private void InitDictionareis()
         {
             this.colCoordinates[0] = 190;
             this.colCoordinates[1] = 336;
@@ -29,6 +31,14 @@
         public Tuple<int, int> GetCoordinates(int row, int col)
         {
             return new Tuple<int, int>(this.colCoordinates[col], this.rowCoordinates[row]);
+        }
+
+        public Tuple<int, int> GetDimentions(int coordX, int coordY)
+        {
+            int x = this.colCoordinates.FirstOrDefault(p => p.Value == coordX).Key;
+            int y = this.colCoordinates.FirstOrDefault(p => p.Value == coordY).Key;
+
+            return new Tuple<int,int>(x,y);
         }
     }
 }
