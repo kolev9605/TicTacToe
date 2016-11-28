@@ -4,9 +4,12 @@
 
     public partial class MainForm : Form
     {
-        public MainForm()
+        private int startTurn;
+
+        public MainForm(int startTurn = -1)
         {
             this.InitializeComponent();
+            this.startTurn = startTurn;
         }
 
         private void quitButton_Click(object sender, System.EventArgs e)
@@ -23,7 +26,7 @@
         private void playButton_Click(object sender, System.EventArgs e)
         {
             this.Hide();
-            var gameForm = new GameForm();
+            var gameForm = new GameForm(this.startTurn);
             gameForm.Closed += (s, args) => this.Close();
             gameForm.Show();
         }

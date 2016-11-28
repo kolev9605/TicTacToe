@@ -1,11 +1,8 @@
 ﻿namespace TicTacToe.Game
 {
-    using System;
-    using System.Runtime.CompilerServices;
-
     public class Board
     {
-        public Cell[,] board;
+        private Cell[,] board;
 
         public Board()
         {
@@ -26,11 +23,11 @@
             bool firstRowWin = this.board[0, 0].Equals(this.board[0, 1]) && this.board[0, 0].Equals(this.board[0, 2]) && !this.board[0, 0].Type.Equals(CellType.Empty);
             bool secondRowWin = this.board[1, 0].Equals(this.board[1, 1]) && this.board[1, 0].Equals(this.board[1, 2]) && !this.board[1, 0].Type.Equals(CellType.Empty);
             bool thirdRowWin = this.board[2, 0].Equals(this.board[2, 1]) && this.board[2, 0].Equals(this.board[2, 2]) && !this.board[2, 0].Type.Equals(CellType.Empty);
-            ;
+
             bool firstColWin = this.board[0, 0].Equals(this.board[1, 0]) && this.board[0, 0].Equals(this.board[2, 0]) && !this.board[0, 0].Type.Equals(CellType.Empty);
             bool secondColWin = this.board[0, 1].Equals(this.board[1, 1]) && this.board[0, 1].Equals(this.board[2, 1]) && !this.board[0, 1].Type.Equals(CellType.Empty);
             bool thirdColWin = this.board[0, 2].Equals(this.board[1, 2]) && this.board[0, 2].Equals(this.board[2, 2]) && !this.board[0, 2].Type.Equals(CellType.Empty);
-            ;
+
             bool firstDiagWin = this.board[0, 0].Equals(this.board[1, 1]) && this.board[0, 0].Equals(this.board[2, 2]) && !this.board[0, 0].Type.Equals(CellType.Empty);
             bool secondDiagWin = this.board[2, 0].Equals(this.board[1, 1]) && this.board[2, 0].Equals(this.board[0, 2]) && !this.board[2, 0].Type.Equals(CellType.Empty);
 
@@ -94,13 +91,11 @@
         {
             if (turn % 2 == 0)
             {
-                return CellType.X
-                    ;
+                return CellType.X;
             }
             else
             {
                 return CellType.O;
-                ;
             }
         }
     }
