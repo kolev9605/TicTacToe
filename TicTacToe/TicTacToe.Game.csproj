@@ -50,7 +50,6 @@
     <Compile Include="Cell.cs" />
     <Compile Include="CellType.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="CoordinateTransformer.cs" />
     <Compile Include="Forms\GameForm.cs">
       <SubType>Form</SubType>
     </Compile>

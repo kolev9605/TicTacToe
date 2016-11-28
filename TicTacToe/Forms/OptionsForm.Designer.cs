@@ -30,12 +30,13 @@
             this.backButton = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // backButton
             // 
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.backButton.Location = new System.Drawing.Point(270, 473);
+            this.backButton.Location = new System.Drawing.Point(289, 480);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(220, 47);
             this.backButton.TabIndex = 0;
@@ -59,18 +60,29 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Image = global::TicTacToe.Game.Properties.Resources.o;
-            this.radioButton2.Location = new System.Drawing.Point(418, 131);
+            this.radioButton2.Location = new System.Drawing.Point(444, 131);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(117, 101);
             this.radioButton2.TabIndex = 2;
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(133, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(521, 32);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Which figure would you want to start?";
             // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(Constants.FormWidth, Constants.FormHeight);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.backButton);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -66,7 +66,7 @@
                 var winningPlace = this.board.Winner;
                 var winner = this.board.GetWinner(this.turn);
 
-                MessageBox.Show(winner.ToString());
+                MessageBox.Show(string.Format("Winner is the player with {0}", winner));
                 this.BeginNewGame();
             }
         }
