@@ -1,17 +1,20 @@
 ﻿namespace TicTacToe.Game
 {
+    using System.Linq;
+
     public class Board
     {
-        private Cell[,] board;
+        private Cell[][] board;
 
         public Board()
         {
-            this.board = new Cell[3, 3];
-            for (int i = 0; i < this.board.GetLength(0); i++)
+            this.board = new Cell[3][];
+            for (int i = 0; i < this.board.Length; i++)
             {
-                for (int j = 0; j < this.board.GetLength(1); j++)
+                this.board[i] = new Cell[3];
+                for (int j = 0; j < this.board[i].Length; j++)
                 {
-                    this.board[i, j] = new Cell();
+                    this.board[i][j] = new Cell();
                 }
             }
         }
@@ -20,16 +23,16 @@
 
         public bool HasWon()
         {
-            bool firstRowWin = this.board[0, 0].Equals(this.board[0, 1]) && this.board[0, 0].Equals(this.board[0, 2]) && !this.board[0, 0].Type.Equals(CellType.Empty);
-            bool secondRowWin = this.board[1, 0].Equals(this.board[1, 1]) && this.board[1, 0].Equals(this.board[1, 2]) && !this.board[1, 0].Type.Equals(CellType.Empty);
-            bool thirdRowWin = this.board[2, 0].Equals(this.board[2, 1]) && this.board[2, 0].Equals(this.board[2, 2]) && !this.board[2, 0].Type.Equals(CellType.Empty);
+            bool firstRowWin = this.board[0][0].Equals(this.board[0][1]) && this.board[0][0].Equals(this.board[0][2]) && !this.board[0][0].Type.Equals(CellType.Empty);
+            bool secondRowWin = this.board[1][0].Equals(this.board[1][1]) && this.board[1][0].Equals(this.board[1][2]) && !this.board[1][0].Type.Equals(CellType.Empty);
+            bool thirdRowWin = this.board[2][0].Equals(this.board[2][1]) && this.board[2][0].Equals(this.board[2][2]) && !this.board[2][0].Type.Equals(CellType.Empty);
 
-            bool firstColWin = this.board[0, 0].Equals(this.board[1, 0]) && this.board[0, 0].Equals(this.board[2, 0]) && !this.board[0, 0].Type.Equals(CellType.Empty);
-            bool secondColWin = this.board[0, 1].Equals(this.board[1, 1]) && this.board[0, 1].Equals(this.board[2, 1]) && !this.board[0, 1].Type.Equals(CellType.Empty);
-            bool thirdColWin = this.board[0, 2].Equals(this.board[1, 2]) && this.board[0, 2].Equals(this.board[2, 2]) && !this.board[0, 2].Type.Equals(CellType.Empty);
+            bool firstColWin = this.board[0][0].Equals(this.board[1][0]) && this.board[0][0].Equals(this.board[2][0]) && !this.board[0][0].Type.Equals(CellType.Empty);
+            bool secondColWin = this.board[0][1].Equals(this.board[1][1]) && this.board[0][1].Equals(this.board[2][1]) && !this.board[0][1].Type.Equals(CellType.Empty);
+            bool thirdColWin = this.board[0][2].Equals(this.board[1][2]) && this.board[0][2].Equals(this.board[2][2]) && !this.board[0][2].Type.Equals(CellType.Empty);
 
-            bool firstDiagWin = this.board[0, 0].Equals(this.board[1, 1]) && this.board[0, 0].Equals(this.board[2, 2]) && !this.board[0, 0].Type.Equals(CellType.Empty);
-            bool secondDiagWin = this.board[2, 0].Equals(this.board[1, 1]) && this.board[2, 0].Equals(this.board[0, 2]) && !this.board[2, 0].Type.Equals(CellType.Empty);
+            bool firstDiagWin = this.board[0][0].Equals(this.board[1][1]) && this.board[0][0].Equals(this.board[2][2]) && !this.board[0][0].Type.Equals(CellType.Empty);
+            bool secondDiagWin = this.board[2][0].Equals(this.board[1][1]) && this.board[2][0].Equals(this.board[0][2]) && !this.board[2][0].Type.Equals(CellType.Empty);
 
             if (firstRowWin)
             {
@@ -72,15 +75,30 @@
                 return true;
             }
 
+            bool isDraw = true;
+            for (int i = 0; i < this.board.Length; i++)
+            {
+                if (!this.board[i].All(x => !x.Equals(new Cell())))
+                {
+                    isDraw = false;
+                }
+            }
+
+            if (isDraw)
+            {
+                this.Winner = WinnerType.Draw;
+                return true;
+            }
+
             return false;
         }
 
         public bool Place(int row, int col, CellType type)
         {
-            if (this.board[row, col] == null || this.board[row, col].Type == CellType.Empty)
+            if (this.board[row][col] == null || this.board[row][col].Type == CellType.Empty)
             {
                 var cell = new Cell(type);
-                this.board[row, col] = cell;
+                this.board[row][col] = cell;
                 return true;
             }
 

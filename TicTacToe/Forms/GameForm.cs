@@ -66,7 +66,20 @@
                 var winningPlace = this.board.Winner;
                 var winner = this.board.GetWinner(this.turn);
 
-                MessageBox.Show(string.Format("Winner is the player with {0}", winner));
+                if (winningPlace == WinnerType.Draw)
+                {
+                    MessageBox.Show("Draw.");
+                }
+                else
+                {
+                    WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+                    wplayer.URL = "winsound.mp3";
+                    wplayer.controls.play();
+
+                    MessageBox.Show(string.Format("Winner is the player with {0}", winner));
+
+                }
+
                 this.BeginNewGame();
             }
         }

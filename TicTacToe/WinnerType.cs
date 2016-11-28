@@ -9,6 +9,7 @@
         SecondCol = 4,
         ThirdCol = 5,
         FirstDiag = 6,
-        SecondDiag = 7
+        SecondDiag = 7,
+        Draw = 8
     }
 }
