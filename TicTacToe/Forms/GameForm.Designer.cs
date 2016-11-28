@@ -57,9 +57,9 @@
             // 
             this.boardImage.BackColor = System.Drawing.Color.Transparent;
             this.boardImage.Image = global::TicTacToe.Game.Properties.Resources.board;
-            this.boardImage.Location = new System.Drawing.Point(175, 111);
+            this.boardImage.Location = new System.Drawing.Point(Constants.BoardImagePointX, Constants.BoardImagePointY);
             this.boardImage.Name = "boardImage";
-            this.boardImage.Size = new System.Drawing.Size(420, 420);
+            this.boardImage.Size = new System.Drawing.Size(Constants.BoardImageWidth, Constants.BoardImageHeight);
             this.boardImage.TabIndex = 0;
             this.boardImage.TabStop = false;
             // 
@@ -76,81 +76,81 @@
             // 
             // firstCellPictureBox
             // 
-            this.firstCellPictureBox.Location = new System.Drawing.Point(185, 122);
+            this.firstCellPictureBox.Location = new System.Drawing.Point(Constants.FirstCellImagePointX, Constants.FirstCellImagePointY);
             this.firstCellPictureBox.Name = "firstCellPictureBox";
-            this.firstCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.firstCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.firstCellPictureBox.TabIndex = 2;
             this.firstCellPictureBox.TabStop = false;
             this.firstCellPictureBox.Click += new System.EventHandler(this.firstCellPictureBox_Click);
             // 
             // secondCellPictureBox
             // 
-            this.secondCellPictureBox.Location = new System.Drawing.Point(341, 122);
+            this.secondCellPictureBox.Location = new System.Drawing.Point(Constants.SecondCellImagePointX, Constants.SecondCellImagePointY);
             this.secondCellPictureBox.Name = "secondCellPictureBox";
-            this.secondCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.secondCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.secondCellPictureBox.TabIndex = 3;
             this.secondCellPictureBox.TabStop = false;
             this.secondCellPictureBox.Click += new System.EventHandler(this.secondCellPictureBox_Click);
             // 
             // thirdCellPictureBox
             // 
-            this.thirdCellPictureBox.Location = new System.Drawing.Point(490, 122);
+            this.thirdCellPictureBox.Location = new System.Drawing.Point(Constants.ThirdCellImagePointX, Constants.ThirdCellImagePointY);
             this.thirdCellPictureBox.Name = "thirdCellPictureBox";
-            this.thirdCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.thirdCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.thirdCellPictureBox.TabIndex = 4;
             this.thirdCellPictureBox.TabStop = false;
             this.thirdCellPictureBox.Click += new System.EventHandler(this.thirdCellPictureBox_Click);
             // 
             // fourthCellPictureBox
             // 
-            this.fourthCellPictureBox.Location = new System.Drawing.Point(185, 269);
+            this.fourthCellPictureBox.Location = new System.Drawing.Point(Constants.FourthCellImagePointX, Constants.FourthCellImagePointY);
             this.fourthCellPictureBox.Name = "fourthCellPictureBox";
-            this.fourthCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.fourthCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.fourthCellPictureBox.TabIndex = 5;
             this.fourthCellPictureBox.TabStop = false;
             this.fourthCellPictureBox.Click += new System.EventHandler(this.fourthCellPictureBox_Click);
             // 
             // fifthCellPictureBox
             // 
-            this.fifthCellPictureBox.Location = new System.Drawing.Point(341, 269);
+            this.fifthCellPictureBox.Location = new System.Drawing.Point(Constants.FifthCellImagePointX, Constants.FifthCellImagePointY);
             this.fifthCellPictureBox.Name = "fifthCellPictureBox";
-            this.fifthCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.fifthCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.fifthCellPictureBox.TabIndex = 6;
             this.fifthCellPictureBox.TabStop = false;
             this.fifthCellPictureBox.Click += new System.EventHandler(this.fifthCellPictureBox_Click);
             // 
             // sixthCellPictureBox
             // 
-            this.sixthCellPictureBox.Location = new System.Drawing.Point(490, 269);
+            this.sixthCellPictureBox.Location = new System.Drawing.Point(Constants.SixthCellImagePointX, Constants.SixthCellImagePointY);
             this.sixthCellPictureBox.Name = "sixthCellPictureBox";
-            this.sixthCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.sixthCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.sixthCellPictureBox.TabIndex = 7;
             this.sixthCellPictureBox.TabStop = false;
             this.sixthCellPictureBox.Click += new System.EventHandler(this.sixthCellPictureBox_Click);
             // 
             // seventhCellPictureBox
             // 
-            this.seventhCellPictureBox.Location = new System.Drawing.Point(185, 423);
+            this.seventhCellPictureBox.Location = new System.Drawing.Point(Constants.SeventhCellImagePointX, Constants.SeventhCellImagePointY);
             this.seventhCellPictureBox.Name = "seventhCellPictureBox";
-            this.seventhCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.seventhCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.seventhCellPictureBox.TabIndex = 8;
             this.seventhCellPictureBox.TabStop = false;
             this.seventhCellPictureBox.Click += new System.EventHandler(this.seventhCellPictureBox_Click);
             // 
             // eighthCellPictureBox
             // 
-            this.eighthCellPictureBox.Location = new System.Drawing.Point(341, 423);
+            this.eighthCellPictureBox.Location = new System.Drawing.Point(Constants.EighthCellImagePointX, Constants.EighthCellImagePointY);
             this.eighthCellPictureBox.Name = "eighthCellPictureBox";
-            this.eighthCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.eighthCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.eighthCellPictureBox.TabIndex = 9;
             this.eighthCellPictureBox.TabStop = false;
             this.eighthCellPictureBox.Click += new System.EventHandler(this.eighthCellPictureBox_Click);
             // 
             // ninthCellPictureBox
             // 
-            this.ninthCellPictureBox.Location = new System.Drawing.Point(490, 423);
+            this.ninthCellPictureBox.Location = new System.Drawing.Point(Constants.NinthCellImagePointX, Constants.NinthCellImagePointY);
             this.ninthCellPictureBox.Name = "ninthCellPictureBox";
-            this.ninthCellPictureBox.Size = new System.Drawing.Size(100, 101);
+            this.ninthCellPictureBox.Size = new System.Drawing.Size(Constants.CellImageWidth, Constants.CellImageHeight);
             this.ninthCellPictureBox.TabIndex = 10;
             this.ninthCellPictureBox.TabStop = false;
             this.ninthCellPictureBox.Click += new System.EventHandler(this.ninthCellPictureBox_Click);
